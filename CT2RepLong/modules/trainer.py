@@ -16,7 +16,7 @@ class BaseTrainer(object):
         #self.device, device_ids = self._prepare_device(args.n_gpu)
         if torch.cuda.is_available(): 
                  dev = "cuda:0" 
-        self.device = torch.device(dev)
+        self.device = torch.device("cuda")
         self.model = model.to(self.device)
         #if len(device_ids) > 1:
             #self.model = torch.nn.DataParallel(model, device_ids=device_ids)

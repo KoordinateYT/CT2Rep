@@ -1,4 +1,4 @@
-    from pycocoevalcap.bleu.bleu import Bleu
+from pycocoevalcap.bleu.bleu import Bleu
 from pycocoevalcap.cider.cider import Cider
 
 #from pycocoevalcap.meteor import Meteor
