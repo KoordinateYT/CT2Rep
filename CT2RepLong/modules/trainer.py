@@ -214,7 +214,8 @@ class Trainer(BaseTrainer):
       print("begin eval")
       dir_save = self.args.save_dir
       print(epoch)
-      if(epoch%1==0):
+      print("Trained once")
+      if(epoch%15==0):
         self.model.eval()
         with torch.no_grad():
            val_gts, val_res = [], []
