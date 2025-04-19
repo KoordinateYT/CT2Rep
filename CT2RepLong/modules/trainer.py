@@ -53,6 +53,7 @@ class BaseTrainer(object):
         raise NotImplementedError
 
     def train(self):
+        torch.cuda.empty_cache()
         not_improved_count = 0
         for epoch in range(self.start_epoch, self.epochs + 1):
           result = self._train_epoch(epoch)
@@ -191,7 +192,8 @@ class Trainer(BaseTrainer):
         self.test_dataloader = test_dataloader
 
     def _train_epoch(self, epoch):
-      
+
+      torch.cuda.empty_cache()
       train_loss = 0
       print("begin train")
       self.model.train()
@@ -204,6 +206,7 @@ class Trainer(BaseTrainer):
             loss = self.criterion(output,reports_ids, reports_masks)
             train_loss += loss.item()
             self.optimizer.zero_grad()
+            torch.cuda.empty_cache()
             loss.backward()
             torch.nn.utils.clip_grad_value_(self.model.parameters(), 0.1)
             self.optimizer.step()
