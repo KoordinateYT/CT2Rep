@@ -19,7 +19,7 @@ def parse_agrs():
     parser.add_argument('--max_seq_length', type=int, default=200, help='the maximum sequence length of the reports.')
     parser.add_argument('--threshold', type=int, default=3, help='the cut off frequency for the words.')
     parser.add_argument('--num_workers', type=int, default=6, help='the number of workers for dataloader.')
-    parser.add_argument('--batch_size', type=int, default=16, help='the number of samples for a batch')
+    parser.add_argument('--batch_size', type=int, default=1, help='the number of samples for a batch')
 
 
     # Model settings (for Transformer)
@@ -73,11 +73,11 @@ def parse_agrs():
     parser.add_argument('--gamma', type=float, default=0.1, help='the gamma of the learning rate scheduler.')
     
     # Others
-    parser.add_argument('--xlsxfile', type=str, default="../example_data/CT2RepLong/data_reports_example.xlsx", help='reports xlsx file.')
-    parser.add_argument('--trainfolder', type=str, default="../example_data/CT2RepLong/train/", help='train folder.')
-    parser.add_argument('--validfolder', type=str, default="../example_data/CT2RepLong/valid/", help='valid folder.')
-    parser.add_argument('--train_long_file', type=str, default="../example_data/CT2RepLong/train_long.csv", help='train longitudinal csv file.')
-    parser.add_argument('--valid_long_file', type=str, default="../example_data/CT2RepLong/valid_long.csv", help='valid longitudinal csv file.')
+    parser.add_argument('--xlsxfile', type=str, default="/content/drive/MyDrive/example_data/CT2RepLong/data_reports_example.xlsx", help='reports xlsx file.')
+    parser.add_argument('--trainfolder', type=str, default="/content/drive/MyDrive/example_data/CT2RepLong/train/", help='train folder.')
+    parser.add_argument('--validfolder', type=str, default="/content/drive/MyDrive/example_data/CT2RepLong/valid/", help='valid folder.')
+    parser.add_argument('--train_long_file', type=str, default="/content/drive/MyDrive/example_data/CT2RepLong/train_long.csv", help='train longitudinal csv file.')
+    parser.add_argument('--valid_long_file', type=str, default="/content/drive/MyDrive/example_data/CT2RepLong/valid_long.csv", help='valid longitudinal csv file.')
 
 
     parser.add_argument('--resume', type=str, help='whether to resume the training from existing checkpoints.')
