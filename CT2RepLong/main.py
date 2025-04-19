@@ -19,7 +19,7 @@ def parse_agrs():
     parser.add_argument('--max_seq_length', type=int, default=200, help='the maximum sequence length of the reports.')
     parser.add_argument('--threshold', type=int, default=3, help='the cut off frequency for the words.')
     parser.add_argument('--num_workers', type=int, default=6, help='the number of workers for dataloader.')
-    parser.add_argument('--batch_size', type=int, default=16, help='the number of samples for a batch')
+    parser.add_argument('--batch_size', type=int, default=1, help='the number of samples for a batch')
 
 
     # Model settings (for Transformer)
