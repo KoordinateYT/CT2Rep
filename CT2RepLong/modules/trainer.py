@@ -62,7 +62,10 @@ class BaseTrainer(object):
             # save logged informations into log dict
             log = {'epoch': epoch}
             log.update(result)
-            self._record_best(log)
+            if self.mnt_metric in log:
+                self._record_best(log)
+            else:
+                print(f"Skipping metric tracking — '{self.mnt_metric}' not in log")
 
             # print logged informations to the screen
             for key, value in log.items():
