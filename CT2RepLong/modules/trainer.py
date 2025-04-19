@@ -57,7 +57,7 @@ class BaseTrainer(object):
         not_improved_count = 0
         for epoch in range(self.start_epoch, self.epochs + 1):
           result = self._train_epoch(epoch)
-          if(epoch%2==0):
+          if(epoch%10==0):
 
             # save logged informations into log dict
             log = {'epoch': epoch}
